@@ -50,23 +50,27 @@ body{
     padding-bottom:5px;
 }
 
-#buttonsContainer button{
+.button{
     height:4.6em;
     width:4.9em;
-    background-color: rgba(255, 255, 255, 0.02);
-    border:1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
     color:aqua;
     font-size: 18px;
     position:relative;
     padding:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-#buttonsContainer button::after{
-    background: radial-gradient(
-        150px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 255, 255, 0.06),
-        transparent 40%
-    );
+.button:hover::before,
+.button:hover > .button-border{
+    opacity:1;
+}
+
+.button::before, 
+.button > .button-border{
     border-radius: inherit;
     content:"";
     height:100%;
@@ -79,6 +83,33 @@ body{
     transition:opacity 500ms;
 }
 
-#buttonsContainer button:hover::after{
-    opacity:1;
+#buttonsContainer .button::before{
+    background: radial-gradient(
+        200px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.06),
+        transparent 40%
+    );
+    z-index:3;
+}
+
+#buttonsContainer .button > .button-border{
+    background: radial-gradient(
+        100px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.03),
+        transparent 40%
+    );
+    z-index:1;
+}
+
+.button .button-content{
+    height: 97.5%;
+    width: 97.5%;
+    background-color:rgb(23, 23, 23);
+    border-radius:inherit;
+    position:relative;
+    margin:1px;
+    z-index:2;
+    display:flex;
+    justify-content:center;
+    align-items:center
 }
