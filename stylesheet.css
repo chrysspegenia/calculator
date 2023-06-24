@@ -142,3 +142,17 @@ body{
     justify-content:center;
     align-items:center
 }
+
+.number{
+    color:#ddd;
+}
+
+.button .operator{
+    color:#03e9f4;
+    background-color:rgba(62, 223, 235, 0.2);
+}
+
+.button .equal{
+    color:black;
+    background-color:#03e9f4;
+}
