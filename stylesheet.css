@@ -50,6 +50,10 @@ body{
     padding-bottom:5px;
 }
 
+#buttonsContainer:hover .button-border{
+    opacity:1;
+}
+
 .button{
     height:4.6em;
     width:4.9em;
@@ -64,8 +68,7 @@ body{
     align-items:center;
 }
 
-.button:hover::before,
-.button:hover > .button-border{
+.button:hover::before{
     opacity:1;
 }
 
@@ -94,8 +97,8 @@ body{
 
 #buttonsContainer .button > .button-border{
     background: radial-gradient(
-        100px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 255, 255, 0.03),
+        250px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.1),
         transparent 40%
     );
     z-index:1;
