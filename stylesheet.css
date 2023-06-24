@@ -19,7 +19,8 @@ body{
 }
 
 #calcContainer{
-    border:2px white solid;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius:40px;
     height: 40em;
     display:flex;
     flex-direction: column;
