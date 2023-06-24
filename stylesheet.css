@@ -57,5 +57,28 @@ body{
     border:1px solid rgba(255, 255, 255, 0.1);
     color:aqua;
     font-size: 18px;
+    position:relative;
     padding:0;
+}
+
+#buttonsContainer button::after{
+    background: radial-gradient(
+        150px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.06),
+        transparent 40%
+    );
+    border-radius: inherit;
+    content:"";
+    height:100%;
+    left:0;
+    position: absolute;
+    top:0px;
+    width:100%;
+    z-index:2;
+    opacity:0;
+    transition:opacity 500ms;
+}
+
+#buttonsContainer button:hover::after{
+    opacity:1;
 }
