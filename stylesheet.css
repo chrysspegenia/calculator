@@ -15,7 +15,7 @@ body{
     width:100%;
     text-align:center;
     margin:0;
-    color:aqua
+    color:aqua;
 }
 
 #calcContainer{
@@ -51,6 +51,11 @@ body{
 }
 
 #buttonsContainer button{
-    height:6.3em;
-    width:7em;
+    height:4.6em;
+    width:4.9em;
+    background-color: rgba(255, 255, 255, 0.02);
+    border:1px solid rgba(255, 255, 255, 0.1);
+    color:aqua;
+    font-size: 18px;
+    padding:0;
 }
