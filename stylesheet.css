@@ -6,6 +6,8 @@ body{
     align-items:center;
     overflow-x: hidden;
     background-color:rgb(20,20,20);
+    margin:0;
+    padding:0;
 }
 
 #headerContainer, #footerContainer{
