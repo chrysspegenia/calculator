@@ -9,6 +9,6 @@ const handleOnMouseMove = e => {
     target.style.setProperty("--mouse-y", `${y}px`);
 }
 
-for(const card of document.querySelectorAll("button")){
+for(const card of document.querySelectorAll(".button")){
     card.onmousemove = e => handleOnMouseMove(e);
 }
