@@ -1,4 +1,6 @@
-
+let firstNum;
+let operator;
+let secondNum;
 
 
 
