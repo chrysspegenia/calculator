@@ -110,6 +110,7 @@ body{
     z-index:2;
     opacity:0;
     transition:opacity 500ms;
+    pointer-events: none; /*added to make it clickable but not sure if this is the right element*/
 }
 
 #buttonsContainer .button::before{
@@ -140,7 +141,8 @@ body{
     z-index:2;
     display:flex;
     justify-content:center;
-    align-items:center
+    align-items:center;
+    user-select: none; /*make text unhighlightable*/
 }
 
 .number{
