@@ -5,8 +5,8 @@ const operationDisplay = document.getElementById("operationDisplay");
 const resultsDisplay = document.getElementById("resultsDisplay");
 const numberBtn = document.querySelectorAll(".number");
 const operatorBtn = document.querySelectorAll(".operator");
-operationDisplay.textContent = "";
-resultsDisplay.textContent = "";
+const clearBtn = document.getElementById("clear");
+
 
 numberBtn.forEach(number => number.addEventListener("click", () => {
     firstNum = number.id;
@@ -17,6 +17,11 @@ operatorBtn.forEach(operation => operation.addEventListener("click", () => {
     operator = operation.id;
     operationDisplay.textContent += operator;
 }))
+
+clearBtn.onclick = (() => {
+    operationDisplay.textContent = "";
+    resultsDisplay.textContent = "";
+})
 
 function add(firstNum, secondNum){
     return firstNum + secondNum;
