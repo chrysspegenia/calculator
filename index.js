@@ -21,6 +21,9 @@ operatorBtn.forEach(operation => operation.addEventListener("click", () => {
 clearBtn.onclick = (() => {
     operationDisplay.textContent = "";
     resultsDisplay.textContent = "";
+    firstNum = "";
+    operator = "";
+    secondNum = "";
 })
 
 function add(firstNum, secondNum){
