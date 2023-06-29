@@ -1,6 +1,12 @@
 let firstNum;
 let operator;
 let secondNum;
+const operationDisplay = document.getElementById("operationDisplay");
+const resultsDisplay = document.getElementById("resultsDisplay");
+const numberBtn = document.querySelectorAll(".number");
+const operatorBtn = document.querySelectorAll(".operator");
+operationDisplay.textContent = "0";
+resultsDisplay.textContent = "0";
 
 
 
