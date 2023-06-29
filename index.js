@@ -5,10 +5,13 @@ const operationDisplay = document.getElementById("operationDisplay");
 const resultsDisplay = document.getElementById("resultsDisplay");
 const numberBtn = document.querySelectorAll(".number");
 const operatorBtn = document.querySelectorAll(".operator");
-operationDisplay.textContent = "0";
-resultsDisplay.textContent = "0";
+operationDisplay.textContent = "";
+resultsDisplay.textContent = "";
 
-
+numberBtn.forEach(number => number.addEventListener("click", () => {
+    firstNum = number.id;
+    operationDisplay.textContent += firstNum;
+}))
 
 function add(firstNum, secondNum){
     return firstNum + secondNum;
