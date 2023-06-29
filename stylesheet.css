@@ -44,7 +44,7 @@ body{
     align-items:flex-end;
 }
 
-#operation, #results{
+#operationDisplay, #resultsDisplay{
     /* border:1px solid red; */
     width:100%;
     text-align:right;
@@ -52,12 +52,12 @@ body{
     font-family: 'Rubik', sans-serif;
 }
 
-#operation{
+#operationDisplay{
     font-size:25px;
     color:#ddd;
 }
 
-#results{
+#resultsDisplay{
     font-size:40px;
     color:#03e9f4;
 }
