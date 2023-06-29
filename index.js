@@ -13,6 +13,11 @@ numberBtn.forEach(number => number.addEventListener("click", () => {
     operationDisplay.textContent += firstNum;
 }))
 
+operatorBtn.forEach(operation => operation.addEventListener("click", () => {
+    operator = operation.id;
+    operationDisplay.textContent += operator;
+}))
+
 function add(firstNum, secondNum){
     return firstNum + secondNum;
 }
@@ -36,4 +41,4 @@ function operate(firstNum, secondNum, operator){
     if(operator === "multiply") return multiply(firstNum, secondNum);
     if(operator ==="divide") return divide(firstNum, secondNum);
 }
-console.log(operate(firstNum, secondNum, operator))
+//console.log(operate(firstNum, secondNum, operator))
