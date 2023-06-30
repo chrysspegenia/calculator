@@ -65,8 +65,10 @@ function operate(firstNum, secondNum, operator){
 }
 
 equalBtn.onclick = (() => {
+    let result = firstNum;//delays the display of firstNum for spam equal
     operate()
     resultsDisplay.textContent = operate(firstNum, secondNum, operator);
     firstNum = operate(firstNum, secondNum, operator);
+    operationDisplay.textContent = `${result}${operator}${secondNum}`//display equation for spamming equal
 })
 
