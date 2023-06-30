@@ -10,8 +10,22 @@ const equalBtn = document.querySelector(".equal");
 
 
 numberBtn.forEach(number => number.addEventListener("click", () => {
-    firstNum = number.id;
-    operationDisplay.textContent += firstNum;
+    //firstNum = number.id;
+    // operationDisplay.textContent += firstNum;
+    
+        if(!operator){ 
+            firstNum += number.id
+            operationDisplay.textContent = "" 
+            operationDisplay.textContent += firstNum
+            console.log("firstNum: " + firstNum)
+        } else if(operator != undefined){
+            secondNum = number.id;
+            operationDisplay.textContent = `${firstNum}${operator}`
+            operationDisplay.textContent += secondNum;
+            console.log("secondNum: " + secondNum);
+        }
+    
+    
 }))
 
 operatorBtn.forEach(operation => operation.addEventListener("click", () => {
