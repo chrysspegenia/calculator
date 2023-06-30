@@ -10,9 +10,6 @@ const equalBtn = document.querySelector(".equal");
 
 
 numberBtn.forEach(number => number.addEventListener("click", () => {
-    //firstNum = number.id;
-    // operationDisplay.textContent += firstNum;
-    
         if(!operator){ 
             firstNum += number.id //add string number to firstNum
             operationDisplay.textContent = "" //erase current display
@@ -60,15 +57,12 @@ function divide(firstNum, secondNum){
     return firstNum / secondNum;
 }
 
-//keep option to replace value to actual symbols for HTML text display
 function operate(firstNum, secondNum, operator){
     if(operator === "+") return add(firstNum, secondNum);
     if(operator ==="-") return subtract(firstNum, secondNum);
     if(operator === "×") return multiply(firstNum, secondNum);
     if(operator ==="÷") return divide(firstNum, secondNum);
 }
-//console.log(operate(firstNum, secondNum, operator))
-
 
 equalBtn.onclick = (() => {
     operate()
