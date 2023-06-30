@@ -24,13 +24,14 @@ numberBtn.forEach(number => number.addEventListener("click", () => {
             operationDisplay.textContent += secondNum;
             console.log("secondNum: " + secondNum);
         }
-    
-    
 }))
 
 operatorBtn.forEach(operation => operation.addEventListener("click", () => {
     operator = operation.id;
-    operationDisplay.textContent += operator;
+    if(operator !== undefined) 
+        operationDisplay.textContent = `${firstNum}`; //removes the initial chosen operator
+        operationDisplay.textContent += operator;
+    console.log("operator: " +operator)
 }))
 
 clearBtn.onclick = (() => {
