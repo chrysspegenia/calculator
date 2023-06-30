@@ -1,6 +1,6 @@
-let firstNum;
+let firstNum = "";
 let operator;
-let secondNum;
+let secondNum = "";
 const operationDisplay = document.getElementById("operationDisplay");
 const resultsDisplay = document.getElementById("resultsDisplay");
 const numberBtn = document.querySelectorAll(".number");
