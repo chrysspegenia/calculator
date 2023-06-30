@@ -14,12 +14,12 @@ numberBtn.forEach(number => number.addEventListener("click", () => {
     // operationDisplay.textContent += firstNum;
     
         if(!operator){ 
-            firstNum += number.id
+            firstNum += number.id //add string number to firstNum
             operationDisplay.textContent = "" //erase current display
-            operationDisplay.textContent += firstNum //add additional numbers to firstNum
+            operationDisplay.textContent += firstNum //display new value
             console.log("firstNum: " + firstNum)
         } else if(operator != undefined){
-            secondNum = number.id;
+            secondNum += number.id;
             operationDisplay.textContent = `${firstNum}${operator}`
             operationDisplay.textContent += secondNum;
             console.log("secondNum: " + secondNum);
