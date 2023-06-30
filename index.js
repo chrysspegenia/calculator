@@ -7,6 +7,7 @@ const numberBtn = document.querySelectorAll(".number");
 const operatorBtn = document.querySelectorAll(".operator");
 const clearBtn = document.getElementById("clear");
 const equalBtn = document.querySelector(".equal");
+const percentBtn = document.getElementById("percent").onclick = (() =>  percent())
 
 
 numberBtn.forEach(number => number.addEventListener("click", () => {
@@ -61,8 +62,12 @@ function divide(firstNum, secondNum){
 function percent(){
     if(!operator){ 
         firstNum = firstNum / 100;
+        operationDisplay.textContent = firstNum;
+        console.log(`firstNum percent: ` + firstNum);
     } else if(operator != undefined){
         secondNum = secondNum/100;
+        operationDisplay.textContent = `${firstNum}${operator}` + secondNum;
+        console.log(`secondNum percent: ` + secondNum)
     }
 }
 
@@ -80,4 +85,3 @@ equalBtn.onclick = (() => {
     firstNum = operate(firstNum, secondNum, operator);
     operationDisplay.textContent = `${result}${operator}${secondNum}`//display equation for spamming equal
 })
-
