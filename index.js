@@ -6,6 +6,7 @@ const resultsDisplay = document.getElementById("resultsDisplay");
 const numberBtn = document.querySelectorAll(".number");
 const operatorBtn = document.querySelectorAll(".operator");
 const clearBtn = document.getElementById("clear");
+const equalBtn = document.querySelector(".equal");
 
 
 numberBtn.forEach(number => number.addEventListener("click", () => {
@@ -50,3 +51,11 @@ function operate(firstNum, secondNum, operator){
     if(operator ==="÷") return divide(firstNum, secondNum);
 }
 //console.log(operate(firstNum, secondNum, operator))
+
+
+equalBtn.onclick = (() => {
+    operate()
+    resultsDisplay.textContent = operate(firstNum, secondNum, operator);
+    firstNum = operate(firstNum, secondNum, operator);
+})
+
