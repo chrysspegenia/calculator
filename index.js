@@ -26,7 +26,7 @@ numberBtn.forEach(number => number.addEventListener("click", () => {
 operatorBtn.forEach(operation => operation.addEventListener("click", () => {
     operator = operation.id;
     if(operator !== undefined) 
-        secondNum = "";
+        secondNum = ""; //reset secondNum when clicking a new operator
         operationDisplay.textContent = `${firstNum}`; //removes the initial chosen operator
         operationDisplay.textContent += operator;
     console.log("operator: " +operator)
@@ -56,6 +56,14 @@ function multiply(firstNum, secondNum){
 
 function divide(firstNum, secondNum){
     return firstNum / secondNum;
+}
+
+function percent(){
+    if(!operator){ 
+        firstNum = firstNum / 100;
+    } else if(operator != undefined){
+        secondNum = secondNum/100;
+    }
 }
 
 function operate(firstNum, secondNum, operator){
