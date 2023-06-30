@@ -15,8 +15,8 @@ numberBtn.forEach(number => number.addEventListener("click", () => {
     
         if(!operator){ 
             firstNum += number.id
-            operationDisplay.textContent = "" 
-            operationDisplay.textContent += firstNum
+            operationDisplay.textContent = "" //erase current display
+            operationDisplay.textContent += firstNum //add additional numbers to firstNum
             console.log("firstNum: " + firstNum)
         } else if(operator != undefined){
             secondNum = number.id;
@@ -43,7 +43,9 @@ clearBtn.onclick = (() => {
 })
 
 function add(firstNum, secondNum){
-    return firstNum + secondNum;
+    let first = parseInt(firstNum)
+    let second = parseInt(secondNum)
+    return first + second;
 }
 
 function subtract(firstNum, secondNum){
