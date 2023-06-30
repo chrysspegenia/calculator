@@ -60,9 +60,10 @@ function divide(firstNum, secondNum){
 }
 
 function percent(){
+    if(!firstNum) return;
     if(!operator){ 
         firstNum = firstNum / 100;
-        operationDisplay.textContent = firstNum;
+        operationDisplay.textContent = firstNum; //display the percent value of firstNum
         console.log(`firstNum percent: ` + firstNum);
     } else if(operator != undefined){
         secondNum = secondNum/100;
