@@ -26,6 +26,7 @@ numberBtn.forEach(number => number.addEventListener("click", () => {
 operatorBtn.forEach(operation => operation.addEventListener("click", () => {
     operator = operation.id;
     if(operator !== undefined) 
+        secondNum = "";
         operationDisplay.textContent = `${firstNum}`; //removes the initial chosen operator
         operationDisplay.textContent += operator;
     console.log("operator: " +operator)
