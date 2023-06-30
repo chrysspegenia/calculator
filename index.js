@@ -7,7 +7,7 @@ const numberBtn = document.querySelectorAll(".number");
 const operatorBtn = document.querySelectorAll(".operator");
 const clearBtn = document.getElementById("clear");
 const equalBtn = document.querySelector(".equal");
-const percentBtn = document.getElementById("percent").onclick = (() =>  percent())
+const percentBtn = document.getElementById("percent").onclick = (() =>  percent());
 
 
 numberBtn.forEach(number => number.addEventListener("click", () => {
@@ -80,6 +80,7 @@ function operate(firstNum, secondNum, operator){
 }
 
 equalBtn.onclick = (() => {
+    if(!firstNum || !secondNum) return; //prevents undefined
     let result = firstNum;//delays the display of firstNum for spam equal
     operate()
     resultsDisplay.textContent = operate(firstNum, secondNum, operator);
