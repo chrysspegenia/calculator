@@ -44,9 +44,9 @@ function divide(firstNum, secondNum){
 
 //keep option to replace value to actual symbols for HTML text display
 function operate(firstNum, secondNum, operator){
-    if(operator === "add") return add(firstNum, secondNum);
-    if(operator ==="subtract") return subtract(firstNum, secondNum);
-    if(operator === "multiply") return multiply(firstNum, secondNum);
-    if(operator ==="divide") return divide(firstNum, secondNum);
+    if(operator === "+") return add(firstNum, secondNum);
+    if(operator ==="-") return subtract(firstNum, secondNum);
+    if(operator === "×") return multiply(firstNum, secondNum);
+    if(operator ==="÷") return divide(firstNum, secondNum);
 }
 //console.log(operate(firstNum, secondNum, operator))
