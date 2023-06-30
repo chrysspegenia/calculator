@@ -42,8 +42,8 @@ clearBtn.onclick = (() => {
 })
 
 function add(firstNum, secondNum){
-    let first = parseInt(firstNum)
-    let second = parseInt(secondNum)
+    let first = parseFloat(firstNum)
+    let second = parseFloat(secondNum)
     return first + second;
 }
 
