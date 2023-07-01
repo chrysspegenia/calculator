@@ -74,34 +74,18 @@ function percent(){
 }
 
 function changeSign(){
-    let currentSign = "positive";
-
-    if(currentSign === "positive" && !operator){
-        firstNum = firstNum * (-1);
+    if(!firstNum && !secondNum) return;
+    let result = firstNum;
+    if(!operator){
+        firstNum = firstNum * -1;
         operationDisplay.textContent = firstNum;
-        console.log(firstNum)
-        return currentSign = "negative";
+        console.log("firstNum change sign: " + firstNum)
     };
 
-    if(currentSign === "negative" && !operator){
-        firstNum = Math.abs(firstNum);
-        operationDisplay.textContent = firstNum;
-        console.log(firstNum)
-        return currentSign = "positive";
-    };
-
-    if(currentSign === "positive" && operator !== undefined){
-        secondNum = secondNum * (-1);
-        operationDisplay.textContent = `${firstNum}${operator}` + secondNum;
-        console.log(secondNum)
-        return currentSign = "negative";
-    };
-
-    if(currentSign === "negative" && operator !== undefined){
-        secondNum = Math.abs(secondNum);
-        operationDisplay.textContent = `${firstNum}${operator}` + secondNum;
-        console.log(secondNum)
-        return currentSign === "positive";
+    if(operator !== undefined){
+        secondNum = secondNum * -1;
+        operationDisplay.textContent = `${result}${operator}` + secondNum;
+        console.log("firstNum change sign: " + secondNum)
     };
     
 }
