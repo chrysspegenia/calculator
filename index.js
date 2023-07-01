@@ -8,6 +8,7 @@ const operatorBtn = document.querySelectorAll(".operator");
 const clearBtn = document.getElementById("clear");
 const equalBtn = document.querySelector(".equal");
 const percentBtn = document.getElementById("percent").onclick = (() =>  percent());
+const signsBtn = document.getElementById("sign").onclick = (() => changeSign());
 
 
 numberBtn.forEach(number => number.addEventListener("click", () => {
@@ -70,6 +71,39 @@ function percent(){
         operationDisplay.textContent = `${firstNum}${operator}` + secondNum;
         console.log(`secondNum percent: ` + secondNum)
     }
+}
+
+function changeSign(){
+    let currentSign = "positive";
+
+    if(currentSign === "positive" && !operator){
+        firstNum = firstNum * (-1);
+        operationDisplay.textContent = firstNum;
+        console.log(firstNum)
+        return currentSign = "negative";
+    };
+
+    if(currentSign === "negative" && !operator){
+        firstNum = Math.abs(firstNum);
+        operationDisplay.textContent = firstNum;
+        console.log(firstNum)
+        return currentSign = "positive";
+    };
+
+    if(currentSign === "positive" && operator !== undefined){
+        secondNum = secondNum * (-1);
+        operationDisplay.textContent = `${firstNum}${operator}` + secondNum;
+        console.log(secondNum)
+        return currentSign = "negative";
+    };
+
+    if(currentSign === "negative" && operator !== undefined){
+        secondNum = Math.abs(secondNum);
+        operationDisplay.textContent = `${firstNum}${operator}` + secondNum;
+        console.log(secondNum)
+        return currentSign === "positive";
+    };
+    
 }
 
 function operate(firstNum, secondNum, operator){
