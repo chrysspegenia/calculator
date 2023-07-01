@@ -64,12 +64,14 @@ function percent(){
     if(!firstNum) return;
     if(!operator){ 
         firstNum = firstNum / 100;
-        operationDisplay.textContent = firstNum; //display the percent value of firstNum
         console.log(`firstNum percent: ` + firstNum);
-    } else if(operator != undefined){
+        return operationDisplay.textContent = firstNum; //display the percent value of firstNum
+    }
+    if(!secondNum) return;
+    if(operator != undefined){
         secondNum = secondNum/100;
-        operationDisplay.textContent = `${firstNum}${operator}` + secondNum;
-        console.log(`secondNum percent: ` + secondNum)
+        console.log(`secondNum percent: ` + secondNum);
+        return operationDisplay.textContent = `${firstNum}${operator}` + secondNum;
     }
 }
 
