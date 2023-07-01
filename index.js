@@ -74,20 +74,20 @@ function percent(){
 }
 
 function changeSign(){
-    if(!firstNum && !secondNum) return;
+    if(!firstNum) return;
     let result = firstNum;
     if(!operator){
         firstNum = firstNum * -1;
-        operationDisplay.textContent = firstNum;
         console.log("firstNum change sign: " + firstNum)
-    };
-
+        return operationDisplay.textContent = firstNum;
+    }
+    
+    if(!secondNum) return;
     if(operator !== undefined){
         secondNum = secondNum * -1;
-        operationDisplay.textContent = `${result}${operator}` + secondNum;
         console.log("firstNum change sign: " + secondNum)
+        return operationDisplay.textContent = `${result}${operator}` + secondNum;
     };
-    
 }
 
 function operate(firstNum, secondNum, operator){
