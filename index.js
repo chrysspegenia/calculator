@@ -9,7 +9,7 @@ const clearBtn = document.getElementById("clear");
 const equalBtn = document.querySelector(".equal");
 const percentBtn = document.getElementById("percent").onclick = (() =>  percent());
 const signsBtn = document.getElementById("sign").onclick = (() => changeSign());
-
+const backspaceBtn = document.getElementById("backspace").onclick = (() => backspace())
 
 numberBtn.forEach(number => number.addEventListener("click", () => {
         if(!operator){ 
@@ -41,6 +41,27 @@ clearBtn.onclick = (() => {
     operator = "";
     secondNum = "";
 })
+
+function backspace(){
+    //backspace for operationDisplay
+    operationDisplay.textContent = operationDisplay.textContent.toString().slice(0, -1);
+
+    //backspace for firstNum
+    if(!secondNum && !operator){
+        firstNum = firstNum.toString().slice(0, -1);
+        return console.log("firstNum backspace: " + firstNum)
+    }
+
+    //backspace for operator
+    if(!secondNum) return operator = operator.toString().slice(0, -1), 
+        console.log("operator backspace: " + operator);
+
+    //backspace for secondNum
+    if(secondNum !== undefined){
+        secondNum = secondNum.toString().slice(0, -1);
+        return console.log("secondNum: " + secondNum)
+    }
+}
 
 function add(firstNum, secondNum){
     let first = parseFloat(firstNum)
@@ -101,9 +122,9 @@ function operate(firstNum, secondNum, operator){
 
 equalBtn.onclick = (() => {
     if(!firstNum || !secondNum) return; //prevents undefined
-    let result = firstNum;//delays the display of firstNum for spam equal
+    let result = firstNum;//delays the display of firstNum for multiple equal clicks
     operate()
     resultsDisplay.textContent = operate(firstNum, secondNum, operator);
     firstNum = operate(firstNum, secondNum, operator);
-    operationDisplay.textContent = `${result}${operator}${secondNum}`//display equation for spamming equal
+    operationDisplay.textContent = `${result}${operator}${secondNum}`//display equation for multiple equal clicks
 })
