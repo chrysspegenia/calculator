@@ -6,7 +6,7 @@ const resultsDisplay = document.getElementById("resultsDisplay");
 const numberBtn = document.querySelectorAll(".number");
 const operatorBtn = document.querySelectorAll(".operator");
 const clearBtn = document.getElementById("clear");
-const equalBtn = document.querySelector(".equal");
+const equalBtn = document.getElementById("equal").onclick = (() => equal());
 const percentBtn = document.getElementById("percent").onclick = (() =>  percent());
 const signsBtn = document.getElementById("sign").onclick = (() => changeSign());
 const backspaceBtn = document.getElementById("backspace").onclick = (() => backspace());
@@ -17,7 +17,7 @@ numberBtn.forEach(number => number.addEventListener("click", () => {
             firstNum += number.id //add string number to firstNum
             operationDisplay.textContent = "" //erase current display
             operationDisplay.textContent += firstNum //display new value
-            console.log("firstNum: " + firstNum)
+            console.log("firstNum: " + firstNum) //the textContents above can be combined
         } else if(operator != undefined){
             secondNum += number.id;
             operationDisplay.textContent = `${firstNum}${operator}`
@@ -144,12 +144,11 @@ function operate(firstNum, secondNum, operator){
     if(operator === "×") return multiply(firstNum, secondNum);
     if(operator ==="÷") return divide(firstNum, secondNum);
 }
-
-equalBtn.onclick = (() => {
+function equal(){
     if(!firstNum || !secondNum) return; //prevents undefined
     let result = firstNum;//delays the display of firstNum for multiple equal clicks
     operate()
     resultsDisplay.textContent = operate(firstNum, secondNum, operator);
     firstNum = operate(firstNum, secondNum, operator);
     operationDisplay.textContent = `${result}${operator}${secondNum}`//display equation for multiple equal clicks
-})
+}
