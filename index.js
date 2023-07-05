@@ -30,8 +30,7 @@ operatorBtn.forEach(operation => operation.addEventListener("click", () => {
     operator = operation.id;
     if(operator !== undefined) 
         secondNum = ""; //reset secondNum when clicking a new operator
-        operationDisplay.textContent = `${firstNum}`; //removes the initial chosen operator
-        operationDisplay.textContent += operator;
+        operationDisplay.textContent = firstNum + operator; //removes the initial chosen operator
     console.log("operator: " +operator)
 }))
 
