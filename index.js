@@ -9,7 +9,8 @@ const clearBtn = document.getElementById("clear");
 const equalBtn = document.querySelector(".equal");
 const percentBtn = document.getElementById("percent").onclick = (() =>  percent());
 const signsBtn = document.getElementById("sign").onclick = (() => changeSign());
-const backspaceBtn = document.getElementById("backspace").onclick = (() => backspace())
+const backspaceBtn = document.getElementById("backspace").onclick = (() => backspace());
+const decimalBtn = document.getElementById("decimal").onclick = (() => decimal());
 
 numberBtn.forEach(number => number.addEventListener("click", () => {
         if(!operator){ 
@@ -111,6 +112,33 @@ function changeSign(){
         console.log("firstNum change sign: " + secondNum)
         return operationDisplay.textContent = `${result}${operator}` + secondNum;
     };
+}
+
+function decimal(){
+    if(!operator){
+        if(!firstNum){
+            firstNum = "0.";
+            return operationDisplay.textContent = firstNum;
+        };
+        if(firstNum !== undefined){
+            firstNum = firstNum + ".";
+            return operationDisplay.textContent = firstNum;
+        }
+    }
+
+    if(operator !== undefined){
+        if(!secondNum){
+            secondNum = "0.";
+            console.log(secondNum)
+            return operationDisplay.textContent = firstNum + operator + secondNum;
+        }
+        if(secondNum !== undefined){
+            secondNum = secondNum + ".";
+            console.log(secondNum)
+            return operationDisplay.textContent = firstNum + operator + secondNum;
+        }
+    }
+    
 }
 
 function operate(firstNum, secondNum, operator){
