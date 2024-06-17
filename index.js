@@ -28,10 +28,17 @@ numberBtn.forEach(number => number.addEventListener("click", () => {
 
 operatorBtn.forEach(operation => operation.addEventListener("click", () => {
     operator = operation.id;
-    if(operator !== undefined) 
-        secondNum = ""; //reset secondNum when clicking a new operator
-        operationDisplay.textContent = firstNum + operator; //removes the initial chosen operator
-    console.log("operator: " +operator)
+    
+    if(!firstNum){
+        firstNum = "0";
+    }
+
+    if(secondNum){
+        resultsDisplay.textContent = operate(firstNum, secondNum, operator);
+        secondNum = "";
+    }
+
+    operationDisplay.textContent = firstNum + operator;
 }))
 
 clearBtn.onclick = (() => {
@@ -147,7 +154,7 @@ function operate(firstNum, secondNum, operator){
 function equal(){
     if(!firstNum || !secondNum) return; //prevents undefined
     let result = firstNum;//delays the display of firstNum for multiple equal clicks
-    operate()
+    operate(firstNum, secondNum, operator)
     resultsDisplay.textContent = operate(firstNum, secondNum, operator);
     firstNum = operate(firstNum, secondNum, operator);
     operationDisplay.textContent = `${result}${operator}${secondNum}`//display equation for multiple equal clicks
