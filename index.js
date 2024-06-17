@@ -15,13 +15,11 @@ const decimalBtn = document.getElementById("decimal").onclick = (() => decimal()
 numberBtn.forEach(number => number.addEventListener("click", () => {
         if(!operator){ 
             firstNum += number.id //add string number to firstNum
-            operationDisplay.textContent = "" //erase current display
-            operationDisplay.textContent += firstNum //display new value
+            operationDisplay.textContent = firstNum //display new value
             console.log("firstNum: " + firstNum) //the textContents above can be combined
-        } else if(operator != undefined){
+        } else if(operator){
             secondNum += number.id;
-            operationDisplay.textContent = `${firstNum}${operator}`
-            operationDisplay.textContent += secondNum;
+            operationDisplay.textContent = `${firstNum}${operator}${secondNum}`
             console.log("secondNum: " + secondNum);
         }
 }))
