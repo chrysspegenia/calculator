@@ -27,19 +27,28 @@ numberBtn.forEach(number => number.addEventListener("click", () => {
 }))
 
 operatorBtn.forEach(operation => operation.addEventListener("click", () => {
-    operator = operation.id;
-    
-    if(!firstNum){
+    let clickedOperator = operation.id;
+
+    if (!firstNum) {
+        // If firstNum is not defined, set it to "0"
         firstNum = "0";
     }
 
-    if(secondNum){
-        resultsDisplay.textContent = operate(firstNum, secondNum, operator);
-        secondNum = "";
+    if (firstNum && secondNum) {
+        // If all three variables are defined, compute the previous operation
+        let result = operate(firstNum, secondNum, operator);
+        resultsDisplay.textContent = result;
+        firstNum = result.toString(); // Update firstNum with the result for chaining
+        secondNum = ""; // Reset secondNum
     }
 
-    operationDisplay.textContent = firstNum + operator;
-}))
+    // Update operator to the clicked operator
+    operator = clickedOperator;
+
+    // Update the operation display
+    operationDisplay.textContent = `${firstNum} ${operator}`;
+}));
+
 
 clearBtn.onclick = (() => {
     operationDisplay.textContent = "";
