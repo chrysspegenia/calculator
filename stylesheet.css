@@ -13,11 +13,15 @@ body{
 }
 
 #headerContainer, #footerContainer{
-    border: 2px solid red;
     width:100%;
     text-align:center;
     margin:0;
+    padding: 0.5em;
     color:aqua;
+}
+
+#headerContainer{
+    font-size:2rem;
 }
 
 #calcContainer{
@@ -33,7 +37,6 @@ body{
 }
 
 #screenContainer{
-    /* border:2px purple solid; */
     position:relative;
     width:100%;
     min-height:30%;
@@ -45,7 +48,6 @@ body{
 }
 
 #operationDisplay, #resultsDisplay{
-    /* border:1px solid red; */
     width:80%;
     text-align:right;
     font-family: 'Rubik', sans-serif;
@@ -65,7 +67,6 @@ body{
 }
 
 #buttonsContainer{
-    /* border: 2px blue solid; */
     height:70%;
     width:100%;
     display:flex;
@@ -112,7 +113,7 @@ body{
     z-index:2;
     opacity:0;
     transition:opacity 500ms;
-    pointer-events: none; /*added to make it clickable but not sure if this is the right element*/
+    pointer-events: none;
 }
 
 #buttonsContainer .button::before{
@@ -159,4 +160,8 @@ body{
 .button .equal{
     color:black;
     background-color:#03e9f4;
+}
+
+.operator, .equal{
+    font-size: 2.3rem;
 }
