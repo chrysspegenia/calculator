@@ -71,7 +71,7 @@ function backspace(){
         console.log("operator backspace: " + operator);
 
     //backspace for secondNum
-    if(secondNum !== undefined){
+    if(secondNum){
         secondNum = secondNum.toString().slice(0, -1);
         return console.log("secondNum backspace: " + secondNum)
     }
@@ -120,7 +120,7 @@ function changeSign(){
     }
     
     if(!secondNum) return;
-    if(operator !== undefined){
+    if(operator){
         secondNum = secondNum * -1;
         console.log("firstNum change sign: " + secondNum)
         return operationDisplay.textContent = `${result}${operator}` + secondNum;
@@ -134,19 +134,19 @@ function decimal(){
             console.log(firstNum)
             return operationDisplay.textContent = firstNum;
         }
-        if(firstNum !== undefined && !firstNum.includes(".")){
+        if(firstNum && !firstNum.includes(".")){
             firstNum = firstNum + ".";
             console.log(firstNum)
             return operationDisplay.textContent = firstNum;
         }}
 
-    if(operator !== undefined){
+    if(operator){
         if(!secondNum){
             secondNum = "0.";
             console.log("secondNumDecimal: " + secondNum)
             return operationDisplay.textContent = firstNum + operator + secondNum;
         }
-        if(secondNum !== undefined && !secondNum.includes(".")){
+        if(secondNum && !secondNum.includes(".")){
             secondNum = secondNum + ".";
             return operationDisplay.textContent = firstNum + operator + secondNum;
         }}
